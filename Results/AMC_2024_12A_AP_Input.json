@@ -1,0 +1,302 @@
+{
+  "Problem 1": {
+    "problem": "\nWhat is the value of $9901\\cdot101-99\\cdot10101?$\n\n$\\textbf{(A)}~2\\qquad\\textbf{(B)}~20\\qquad\\textbf{(C)}~200\\qquad\\textbf{(D)}~202\\qquad\\textbf{(E)}~2020$\n\nSolution\n\n",
+    "problem_statement": "What is the value of $9901\\cdot101-99\\cdot10101?$",
+    "Choices": "$\\textbf{(A)}~2\\qquad\\textbf{(B)}~20\\qquad\\textbf{(C)}~200\\qquad\\textbf{(D)}~202\\qquad\\textbf{(E)}~2020$",
+    "flag_error": 0,
+    "answer_choice": "A",
+    "answer_value": "2",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 2": {
+    "problem": "\nA model used to estimate the time it will take to hike to the top of the mountain on a trail is of the form $T=aL+bG,$ where $a$ and $b$ are constants, $T$ is the time in minutes, $L$ is the length of the trail in miles, and $G$ is the altitude gain in feet. The model estimates that it will take $69$ minutes to hike to the top if a trail is $1.5$ miles long and ascends $800$ feet, as well as if a trail is $1.2$ miles long and ascends $1100$ feet. How many minutes does the model estimates it will take to hike to the top if the trail is $4.2$ miles long and ascends $4000$ feet?\n\n$\\textbf{(A) }240\\qquad\\textbf{(B) }246\\qquad\\textbf{(C) }252\\qquad\\textbf{(D) }258\\qquad\\textbf{(E) }264$\n\nSolution\n\n",
+    "problem_statement": "A model used to estimate the time it will take to hike to the top of the mountain on a trail is of the form $T=aL+bG,$ where $a$ and $b$ are constants, $T$ is the time in minutes, $L$ is the length of the trail in miles, and $G$ is the altitude gain in feet. The model estimates that it will take $69$ minutes to hike to the top if a trail is $1.5$ miles long and ascends $800$ feet, as well as if a trail is $1.2$ miles long and ascends $1100$ feet. How many minutes does the model estimates it will take to hike to the top if the trail is $4.2$ miles long and ascends $4000$ feet?",
+    "Choices": "$\\textbf{(A) }240\\qquad\\textbf{(B) }246\\qquad\\textbf{(C) }252\\qquad\\textbf{(D) }258\\qquad\\textbf{(E) }264$",
+    "flag_error": 0,
+    "answer_choice": "B",
+    "answer_value": "246",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 3": {
+    "problem": "\nThe number $2024$ is written as the sum of not necessarily distinct two-digit numbers. What is the least number of two-digit numbers needed to write this sum?\n\n$\\textbf{(A) }20\\qquad\\textbf{(B) }21\\qquad\\textbf{(C) }22\\qquad\\textbf{(D) }23\\qquad\\textbf{(E) }24$\n\nSolution\n\n",
+    "problem_statement": "The number $2024$ is written as the sum of not necessarily distinct two-digit numbers. What is the least number of two-digit numbers needed to write this sum?",
+    "Choices": "$\\textbf{(A) }20\\qquad\\textbf{(B) }21\\qquad\\textbf{(C) }22\\qquad\\textbf{(D) }23\\qquad\\textbf{(E) }24$",
+    "flag_error": 0,
+    "answer_choice": "B",
+    "answer_value": "21",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 4": {
+    "problem": "\nWhat is the least value of $n$ such that $n!$ is a multiple of $2024$?\n\n$\\textbf{(A) }11 \\qquad \\textbf{(B) }21 \\qquad \\textbf{(C) }22 \\qquad \\textbf{(D) }23 \\qquad \\textbf{(E) }253 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "What is the least value of $n$ such that $n!$ is a multiple of $2024$?",
+    "Choices": "$\\textbf{(A) }11 \\qquad \\textbf{(B) }21 \\qquad \\textbf{(C) }22 \\qquad \\textbf{(D) }23 \\qquad \\textbf{(E) }253 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "23",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 5": {
+    "problem": "\nA data set containing $20$ numbers, some of which are $6$, has mean $45$. When all the 6s are removed, the data set has mean $66$. How many 6s were in the original data set?\n\n$\\textbf{(A) }4\\qquad\\textbf{(B) }5\\qquad\\textbf{(C) }6\\qquad\\textbf{(D) }7\\qquad\\textbf{(E) }8$\n\nSolution\n\n",
+    "problem_statement": "A data set containing $20$ numbers, some of which are $6$, has mean $45$. When all the 6s are removed, the data set has mean $66$. How many 6s were in the original data set?",
+    "Choices": "$\\textbf{(A) }4\\qquad\\textbf{(B) }5\\qquad\\textbf{(C) }6\\qquad\\textbf{(D) }7\\qquad\\textbf{(E) }8$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "7",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 6": {
+    "problem": "\nThe product of three integers is $60$. What is the least possible positive sum of the three integers?\n\n$\\textbf{(A) } 2 \\qquad \\textbf{(B) } 3 \\qquad \\textbf{(C) } 5 \\qquad \\textbf{(D) } 6 \\qquad \\textbf{(E) } 13$\n\nSolution\n\n",
+    "problem_statement": "The product of three integers is $60$. What is the least possible positive sum of the three integers?",
+    "Choices": "$\\textbf{(A) } 2 \\qquad \\textbf{(B) } 3 \\qquad \\textbf{(C) } 5 \\qquad \\textbf{(D) } 6 \\qquad \\textbf{(E) } 13$",
+    "flag_error": 0,
+    "answer_choice": "B",
+    "answer_value": "3",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 7": {
+    "problem": "\nIn $\\Delta ABC$, $\\angle ABC = 90^\\circ$ and $BA = BC = \\sqrt{2}$. Points $P_1, P_2, \\dots, P_{2024}$ lie on hypotenuse $\\overline{AC}$ so that $AP_1= P_1P_2 = P_2P_3 = \\dots = P_{2023}P_{2024} = P_{2024}C$. What is the length of the vector sum\\[\\overrightarrow{BP_1} + \\overrightarrow{BP_2} + \\overrightarrow{BP_3} + \\dots + \\overrightarrow{BP_{2024}}?\\]$\\textbf{(A) }1011 \\qquad \\textbf{(B) }1012 \\qquad \\textbf{(C) }2023 \\qquad \\textbf{(D) }2024 \\qquad \\textbf{(E) }2025 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "In $\\Delta ABC$, $\\angle ABC = 90^\\circ$ and $BA = BC = \\sqrt{2}$. Points $P_1, P_2, \\dots, P_{2024}$ lie on hypotenuse $\\overline{AC}$ so that $AP_1= P_1P_2 = P_2P_3 = \\dots = P_{2023}P_{2024} = P_{2024}C$. What is the length of the vector sum\\[\\overrightarrow{BP_1} + \\overrightarrow{BP_2} + \\overrightarrow{BP_3} + \\dots + \\overrightarrow{BP_{2024}}?\\]",
+    "Choices": "$\\textbf{(A) }1011 \\qquad \\textbf{(B) }1012 \\qquad \\textbf{(C) }2023 \\qquad \\textbf{(D) }2024 \\qquad \\textbf{(E) }2025 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "2024",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 8": {
+    "problem": "\nHow many angles $\\theta$ with $0\\le\\theta\\le2\\pi$ satisfy $\\log(\\sin(3\\theta))+\\log(\\cos(2\\theta))=0$?\n\n$\\textbf{(A) }0 \\qquad \\textbf{(B) }1 \\qquad \\textbf{(C) }2 \\qquad \\textbf{(D) }3 \\qquad \\textbf{(E) }4 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "How many angles $\\theta$ with $0\\le\\theta\\le2\\pi$ satisfy $\\log(\\sin(3\\theta))+\\log(\\cos(2\\theta))=0$?",
+    "Choices": "$\\textbf{(A) }0 \\qquad \\textbf{(B) }1 \\qquad \\textbf{(C) }2 \\qquad \\textbf{(D) }3 \\qquad \\textbf{(E) }4 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "A",
+    "answer_value": "0",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 9": {
+    "problem": "\nLet $M$ be the greatest integer such that both $M + 1213$ and $M + 3773$ are perfect squares. What is the units digit of $M$?\n\n$\\textbf{(A) }1 \\qquad \\textbf{(B) }2 \\qquad \\textbf{(C) }3 \\qquad \\textbf{(D) }6 \\qquad \\textbf{(E) }8 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "Let $M$ be the greatest integer such that both $M + 1213$ and $M + 3773$ are perfect squares. What is the units digit of $M$?",
+    "Choices": "$\\textbf{(A) }1 \\qquad \\textbf{(B) }2 \\qquad \\textbf{(C) }3 \\qquad \\textbf{(D) }6 \\qquad \\textbf{(E) }8 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "E",
+    "answer_value": "8",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 10": {
+    "problem": "\nLet $\\alpha$ be the radian measure of the smallest angle in a $3{-}4{-}5$ right triangle. Let $\\beta$ be the radian measure of the smallest angle in a $7{-}24{-}25$ right triangle. In terms of $\\alpha$, what is $\\beta$?\n\n$\\textbf{(A) }\\frac{\\alpha}{3}\\qquad \\textbf{(B) }\\alpha - \\frac{\\pi}{8}\\qquad \\textbf{(C) }\\frac{\\pi}{2} - 2\\alpha \\qquad \\textbf{(D) }\\frac{\\alpha}{2}\\qquad \\textbf{(E) }\\pi - 4\\alpha\\qquad$\n\nSolution\n\n",
+    "problem_statement": "Let $\\alpha$ be the radian measure of the smallest angle in a $3{-}4{-}5$ right triangle. Let $\\beta$ be the radian measure of the smallest angle in a $7{-}24{-}25$ right triangle. In terms of $\\alpha$, what is $\\beta$?",
+    "Choices": "$\\textbf{(A) }\\frac{\\alpha}{3}\\qquad \\textbf{(B) }\\alpha - \\frac{\\pi}{8}\\qquad \\textbf{(C) }\\frac{\\pi}{2} - 2\\alpha \\qquad \\textbf{(D) }\\frac{\\alpha}{2}\\qquad \\textbf{(E) }\\pi - 4\\alpha\\qquad$",
+    "flag_error": 0,
+    "answer_choice": "C",
+    "answer_value": "frac{pi}{2}-2alpha",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 11": {
+    "problem": "\nThere are exactly $K$ positive integers $b$ with $5 \\leq b \\leq 2024$ such that the base-$b$ integer $2024_b$ is divisible by $16$ (where $16$ is in base ten). What is the sum of the digits of $K$?\n\n$\\textbf{(A) }16\\qquad\\textbf{(B) }17\\qquad\\textbf{(C) }18\\qquad\\textbf{(D) }20\\qquad\\textbf{(E) }21$\n\nSolution\n\n",
+    "problem_statement": "There are exactly $K$ positive integers $b$ with $5 \\leq b \\leq 2024$ such that the base-$b$ integer $2024_b$ is divisible by $16$ (where $16$ is in base ten). What is the sum of the digits of $K$?",
+    "Choices": "$\\textbf{(A) }16\\qquad\\textbf{(B) }17\\qquad\\textbf{(C) }18\\qquad\\textbf{(D) }20\\qquad\\textbf{(E) }21$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "20",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 12": {
+    "problem": "\nThe first three terms of a geometric sequence are the integers $a,\\,720,$ and $b,$ where $a<720<b.$ What is the sum of the digits of the least possible value of $b?$\n\n$\\textbf{(A) } 9 \\qquad \\textbf{(B) } 12 \\qquad \\textbf{(C) } 16 \\qquad \\textbf{(D) } 18 \\qquad \\textbf{(E) } 21$\n\nSolution\n\n",
+    "problem_statement": "The first three terms of a geometric sequence are the integers $a,\\,720,$ and $b,$ where $a<720<b.$ What is the sum of the digits of the least possible value of $b?$",
+    "Choices": "$\\textbf{(A) } 9 \\qquad \\textbf{(B) } 12 \\qquad \\textbf{(C) } 16 \\qquad \\textbf{(D) } 18 \\qquad \\textbf{(E) } 21$",
+    "flag_error": 0,
+    "answer_choice": "E",
+    "answer_value": "21",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 13": {
+    "problem": "\nThe graph of $y=e^{x+1}+e^{-x}-2$ has an axis of symmetry. What is the reflection of the point $(-1,\\tfrac{1}{2})$ over this axis?\n\n$\\textbf{(A) }\\left(-1,-\\frac{3}{2}\\right)\\qquad\\textbf{(B) }(-1,0)\\qquad\\textbf{(C) }\\left(-1,\\tfrac{1}{2}\\right)\\qquad\\textbf{(D) }\\left(0,\\frac{1}{2}\\right)\\qquad\\textbf{(E) }\\left(3,\\frac{1}{2}\\right)$\n\nSolution\n\n",
+    "problem_statement": "The graph of $y=e^{x+1}+e^{-x}-2$ has an axis of symmetry. What is the reflection of the point $(-1,\\tfrac{1}{2})$ over this axis?",
+    "Choices": "$\\textbf{(A) }\\left(-1,-\\frac{3}{2}\\right)\\qquad\\textbf{(B) }(-1,0)\\qquad\\textbf{(C) }\\left(-1,\\tfrac{1}{2}\\right)\\qquad\\textbf{(D) }\\left(0,\\frac{1}{2}\\right)\\qquad\\textbf{(E) }\\left(3,\\frac{1}{2}\\right)$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "left(0,frac{1}{2}right)",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 14": {
+    "problem": "\nThe numbers, in order, of each row and the numbers, in order, of each column of a $5 \\times 5$ array of integers form an arithmetic progression of length $5{.}$ The numbers in positions $(5, 5), \\,(2,4),\\,(4,3),$ and $(3, 1)$ are $0, 48, 16,$ and $12{,}$ respectively. What number is in position $(1, 2)?$\\[\\begin{bmatrix} . & ? &.&.&. \\\\ .&.&.&48&.\\\\ 12&.&.&.&.\\\\ .&.&16&.&.\\\\ .&.&.&.&0\\end{bmatrix}\\]$\\textbf{(A) } 19 \\qquad \\textbf{(B) } 24 \\qquad \\textbf{(C) } 29 \\qquad \\textbf{(D) } 34 \\qquad \\textbf{(E) } 39$\n\nSolution\n\n",
+    "problem_statement": "The numbers, in order, of each row and the numbers, in order, of each column of a $5 \\times 5$ array of integers form an arithmetic progression of length $5{.}$ The numbers in positions $(5, 5), \\,(2,4),\\,(4,3),$ and $(3, 1)$ are $0, 48, 16,$ and $12{,}$ respectively. What number is in position $(1, 2)?$\\[\\begin{bmatrix} . & ? &.&.&. \\\\ .&.&.&48&.\\\\ 12&.&.&.&.\\\\ .&.&16&.&.\\\\ .&.&.&.&0\\end{bmatrix}\\]",
+    "Choices": "$\\textbf{(A) } 19 \\qquad \\textbf{(B) } 24 \\qquad \\textbf{(C) } 29 \\qquad \\textbf{(D) } 34 \\qquad \\textbf{(E) } 39$",
+    "flag_error": 0,
+    "answer_choice": "C",
+    "answer_value": "29",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 15": {
+    "problem": "\nThe roots of $x^3 + 2x^2 - x + 3$ are $p, q,$ and $r.$ What is the value of\\[(p^2 + 4)(q^2 + 4)(r^2 + 4)?\\]$\\textbf{(A) } 64 \\qquad \\textbf{(B) } 75 \\qquad \\textbf{(C) } 100 \\qquad \\textbf{(D) } 125 \\qquad \\textbf{(E) } 144$\n\nSolution\n\n",
+    "problem_statement": "The roots of $x^3 + 2x^2 - x + 3$ are $p, q,$ and $r.$ What is the value of\\[(p^2 + 4)(q^2 + 4)(r^2 + 4)?\\]",
+    "Choices": "$\\textbf{(A) } 64 \\qquad \\textbf{(B) } 75 \\qquad \\textbf{(C) } 100 \\qquad \\textbf{(D) } 125 \\qquad \\textbf{(E) } 144$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "125",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 16": {
+    "problem": "\nA set of $12$ tokens ---- $3$ red, $2$ white, $1$ blue, and $6$ black ---- is to be distributed at random to $3$ game players, $4$ tokens per player. The probability that some player gets all the red tokens, another gets all the white tokens, and the remaining player gets the blue token can be written as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?\n\n$\\textbf{(A) }387 \\qquad \\textbf{(B) }388 \\qquad \\textbf{(C) }389 \\qquad \\textbf{(D) }390 \\qquad \\textbf{(E) }391 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "A set of $12$ tokens ---- $3$ red, $2$ white, $1$ blue, and $6$ black ---- is to be distributed at random to $3$ game players, $4$ tokens per player. The probability that some player gets all the red tokens, another gets all the white tokens, and the remaining player gets the blue token can be written as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",
+    "Choices": "$\\textbf{(A) }387 \\qquad \\textbf{(B) }388 \\qquad \\textbf{(C) }389 \\qquad \\textbf{(D) }390 \\qquad \\textbf{(E) }391 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "C",
+    "answer_value": "389",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 17": {
+    "problem": "\nIntegers $a$, $b$, and $c$ satisfy $ab + c = 100$, $bc + a = 87$, and $ca + b = 60$. What is $ab + bc + ca$?\n\n$\\textbf{(A) }212 \\qquad \\textbf{(B) }247 \\qquad \\textbf{(C) }258 \\qquad \\textbf{(D) }276 \\qquad \\textbf{(E) }284 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "Integers $a$, $b$, and $c$ satisfy $ab + c = 100$, $bc + a = 87$, and $ca + b = 60$. What is $ab + bc + ca$?",
+    "Choices": "$\\textbf{(A) }212 \\qquad \\textbf{(B) }247 \\qquad \\textbf{(C) }258 \\qquad \\textbf{(D) }276 \\qquad \\textbf{(E) }284 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "276",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 18": {
+    "problem": "\nOn top of a rectangular card with sides of length $1$ and $2+\\sqrt{3}$, an identical card is placed so that two of their diagonals line up, as shown ($\\overline{AC}$, in this case).\n\n[asy] defaultpen(fontsize(12)+0.85); size(150); real h=2.25; pair C=origin,B=(0,h),A=(1,h),D=(1,0),Dp=reflect(A,C)*D,Bp=reflect(A,C)*B; pair L=extension(A,Dp,B,C),R=extension(Bp,C,A,D); draw(L--B--A--Dp--C--Bp--A); draw(C--D--R); draw(L--C^^R--A,dashed+0.6); draw(A--C,black+0.6); dot(\"$C$\",C,2*dir(C-R)); dot(\"$A$\",A,1.5*dir(A-L)); dot(\"$B$\",B,dir(B-R)); [/asy]\n\nContinue the process, adding a third card to the second, and so on, lining up successive diagonals after rotating clockwise. In total, how many cards must be used until a vertex of a new card lands exactly on the vertex labeled $B$ in the figure?\n\n$\\textbf{(A) }6\\qquad\\textbf{(B) }8\\qquad\\textbf{(C) }10\\qquad\\textbf{(D) }12\\qquad\\textbf{(E) }\\text{No new vertex will land on }B.$\n\nSolution\n\n",
+    "problem_statement": "On top of a rectangular card with sides of length $1$ and $2+\\sqrt{3}$, an identical card is placed so that two of their diagonals line up, as shown ($\\overline{AC}$, in this case).\n\n[asy] defaultpen(fontsize(12)+0.85); size(150); real h=2.25; pair C=origin,B=(0,h),A=(1,h),D=(1,0),Dp=reflect(A,C)*D,Bp=reflect(A,C)*B; pair L=extension(A,Dp,B,C),R=extension(Bp,C,A,D); draw(L--B--A--Dp--C--Bp--A); draw(C--D--R); draw(L--C^^R--A,dashed+0.6); draw(A--C,black+0.6); dot(\"$C$\",C,2*dir(C-R)); dot(\"$A$\",A,1.5*dir(A-L)); dot(\"$B$\",B,dir(B-R)); [/asy]\n\nContinue the process, adding a third card to the second, and so on, lining up successive diagonals after rotating clockwise. In total, how many cards must be used until a vertex of a new card lands exactly on the vertex labeled $B$ in the figure?",
+    "Choices": "$\\textbf{(A) }6\\qquad\\textbf{(B) }8\\qquad\\textbf{(C) }10\\qquad\\textbf{(D) }12\\qquad\\textbf{(E) }\\text{No new vertex will land on }B.$",
+    "flag_error": 0,
+    "answer_choice": "A",
+    "answer_value": "6",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 19": {
+    "problem": "\nCyclic quadrilateral $ABCD$ has lengths $BC=CD=3$ and $DA=5$ with $\\angle CDA=120^\\circ$. What is the length of the shorter diagonal of $ABCD$?\n\n$\\textbf{(A) }\\frac{31}7 \\qquad \\textbf{(B) }\\frac{33}7 \\qquad \\textbf{(C) }5 \\qquad \\textbf{(D) }\\frac{39}7 \\qquad \\textbf{(E) }\\frac{41}7 \\qquad$\n\nSolution\n\n",
+    "problem_statement": "Cyclic quadrilateral $ABCD$ has lengths $BC=CD=3$ and $DA=5$ with $\\angle CDA=120^\\circ$. What is the length of the shorter diagonal of $ABCD$?",
+    "Choices": "$\\textbf{(A) }\\frac{31}7 \\qquad \\textbf{(B) }\\frac{33}7 \\qquad \\textbf{(C) }5 \\qquad \\textbf{(D) }\\frac{39}7 \\qquad \\textbf{(E) }\\frac{41}7 \\qquad$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "frac{39}7",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 20": {
+    "problem": "\nPoints $P$ and $Q$ are chosen uniformly and independently at random on sides $\\overline {AB}$ and $\\overline{AC},$ respectively, of equilateral triangle $\\Delta ABC.$ Which of the following intervals contains the probability that the area of $\\triangle APQ$ is less than half the area of $\\triangle ABC?$\n\n$\\textbf{(A) } \\left[\\frac 38, \\frac 12\\right] \\qquad \\textbf{(B) } \\left(\\frac 12, \\frac 23\\right] \\qquad \\textbf{(C) } \\left(\\frac 23, \\frac 34\\right] \\qquad \\textbf{(D) } \\left(\\frac 34, \\frac 78\\right] \\qquad \\textbf{(E) } \\left(\\frac 78, 1\\right]$\n\nSolution\n\n",
+    "problem_statement": "Points $P$ and $Q$ are chosen uniformly and independently at random on sides $\\overline {AB}$ and $\\overline{AC},$ respectively, of equilateral triangle $\\Delta ABC.$ Which of the following intervals contains the probability that the area of $\\triangle APQ$ is less than half the area of $\\triangle ABC?$",
+    "Choices": "$\\textbf{(A) } \\left[\\frac 38, \\frac 12\\right] \\qquad \\textbf{(B) } \\left(\\frac 12, \\frac 23\\right] \\qquad \\textbf{(C) } \\left(\\frac 23, \\frac 34\\right] \\qquad \\textbf{(D) } \\left(\\frac 34, \\frac 78\\right] \\qquad \\textbf{(E) } \\left(\\frac 78, 1\\right]$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "left(frac34,frac78right]",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 21": {
+    "problem": "\nSuppose that $a_1 = 2$ and the sequence $(a_n)$ satisfies the recurrence relation\\[\\frac{a_n -1}{n-1}=\\frac{a_{n-1}+1}{(n-1)+1}\\]for all $n \\ge 2.$ What is the greatest integer less than or equal to\\[\\sum^{100}_{n=1} a_n^2?\\]$\\textbf{(A) } 338{,}550 \\qquad \\textbf{(B) } 338{,}551 \\qquad \\textbf{(C) } 338{,}552 \\qquad \\textbf{(D) } 338{,}553 \\qquad \\textbf{(E) } 338{,}554$\n\nSolution\n\n",
+    "problem_statement": "Suppose that $a_1 = 2$ and the sequence $(a_n)$ satisfies the recurrence relation\\[\\frac{a_n -1}{n-1}=\\frac{a_{n-1}+1}{(n-1)+1}\\]for all $n \\ge 2.$ What is the greatest integer less than or equal to\\[\\sum^{100}_{n=1} a_n^2?\\]",
+    "Choices": "$\\textbf{(A) } 338{,}550 \\qquad \\textbf{(B) } 338{,}551 \\qquad \\textbf{(C) } 338{,}552 \\qquad \\textbf{(D) } 338{,}553 \\qquad \\textbf{(E) } 338{,}554$",
+    "flag_error": 0,
+    "answer_choice": "B",
+    "answer_value": "338{,}551",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 22": {
+    "problem": "\nThe figure below shows a dotted grid $8$ cells wide and $3$ cells tall consisting of $1''\\times1''$ squares. Carl places $1$-inch toothpicks along some of the sides of the squares to create a closed loop that does not intersect itself. The numbers in the cells indicate the number of sides of that square that are to be covered by toothpicks, and any number of toothpicks are allowed if no number is written. In how many ways can Carl place the toothpicks?\n\n[asy] size(6cm); for (int i=0; i<9; ++i) {   draw((i,0)--(i,3),dotted); } for (int i=0; i<4; ++i){   draw((0,i)--(8,i),dotted); } for (int i=0; i<8; ++i) {   for (int j=0; j<3; ++j) {     if (j==1) {       label(\"1\",(i+0.5,1.5)); }}} [/asy]\n\n$\\textbf{(A) }130\\qquad\\textbf{(B) }144\\qquad\\textbf{(C) }146\\qquad\\textbf{(D) }162\\qquad\\textbf{(E) }196$\n\nSolution\n\n",
+    "problem_statement": "The figure below shows a dotted grid $8$ cells wide and $3$ cells tall consisting of $1''\\times1''$ squares. Carl places $1$-inch toothpicks along some of the sides of the squares to create a closed loop that does not intersect itself. The numbers in the cells indicate the number of sides of that square that are to be covered by toothpicks, and any number of toothpicks are allowed if no number is written. In how many ways can Carl place the toothpicks?\n\n[asy] size(6cm); for (int i=0; i<9; ++i) {   draw((i,0)--(i,3),dotted); } for (int i=0; i<4; ++i){   draw((0,i)--(8,i),dotted); } for (int i=0; i<8; ++i) {   for (int j=0; j<3; ++j) {     if (j==1) {       label(\"1\",(i+0.5,1.5)); }}} [/asy]",
+    "Choices": "$\\textbf{(A) }130\\qquad\\textbf{(B) }144\\qquad\\textbf{(C) }146\\qquad\\textbf{(D) }162\\qquad\\textbf{(E) }196$",
+    "flag_error": 0,
+    "answer_choice": "C",
+    "answer_value": "146",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 23": {
+    "problem": "\nWhat is the value of\n\n\\[\\tan^2 \\frac {\\pi}{16} \\cdot \\tan^2 \\frac {3\\pi}{16}~ + ~ \\tan^2 \\frac {\\pi}{16} \\cdot \\tan^2 \\frac {5\\pi}{16} ~+~\\tan^2 \\frac {3\\pi}{16} \\cdot \\tan^2 \\frac {7\\pi}{16} ~+~ \\tan^2 \\frac {5\\pi}{16} \\cdot \\tan^2 \\frac {7\\pi}{16}?\\]\n\n$\\textbf{(A) } 28 \\qquad \\textbf{(B) } 68 \\qquad \\textbf{(C) } 70 \\qquad \\textbf{(D) } 72 \\qquad \\textbf{(E) } 84$\n\nSolution\n\n",
+    "problem_statement": "What is the value of\n\n\\[\\tan^2 \\frac {\\pi}{16} \\cdot \\tan^2 \\frac {3\\pi}{16}~ + ~ \\tan^2 \\frac {\\pi}{16} \\cdot \\tan^2 \\frac {5\\pi}{16} ~+~\\tan^2 \\frac {3\\pi}{16} \\cdot \\tan^2 \\frac {7\\pi}{16} ~+~ \\tan^2 \\frac {5\\pi}{16} \\cdot \\tan^2 \\frac {7\\pi}{16}?\\]",
+    "Choices": "$\\textbf{(A) } 28 \\qquad \\textbf{(B) } 68 \\qquad \\textbf{(C) } 70 \\qquad \\textbf{(D) } 72 \\qquad \\textbf{(E) } 84$",
+    "flag_error": 0,
+    "answer_choice": "B",
+    "answer_value": "68",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 24": {
+    "problem": "\nA $\\textit{disphenoid}$ is a tetrahedron whose triangular faces are congruent to one another. What is the least total surface area of a disphenoid whose faces are scalene triangles with integer side lengths?\n\n$\\textbf{(A) }\\sqrt{3}\\qquad\\textbf{(B) }3\\sqrt{15}\\qquad\\textbf{(C) }15\\qquad\\textbf{(D) }15\\sqrt{7}\\qquad\\textbf{(E) }24\\sqrt{6}$\n\nSolution\n\n",
+    "problem_statement": "A $\\textit{disphenoid}$ is a tetrahedron whose triangular faces are congruent to one another. What is the least total surface area of a disphenoid whose faces are scalene triangles with integer side lengths?",
+    "Choices": "$\\textbf{(A) }\\sqrt{3}\\qquad\\textbf{(B) }3\\sqrt{15}\\qquad\\textbf{(C) }15\\qquad\\textbf{(D) }15\\sqrt{7}\\qquad\\textbf{(E) }24\\sqrt{6}$",
+    "flag_error": 0,
+    "answer_choice": "D",
+    "answer_value": "15sqrt{7}",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  },
+  "Problem 25": {
+    "problem": "\nA graph is $\\textit{symmetric}$ about a line if the graph remains unchanged after reflection in that line. For how many quadruples of integers $(a,b,c,d)$, where $|a|,|b|,|c|,|d|\\le5$ and $c$ and $d$ are not both $0$, is the graph of\\[y=\\frac{ax+b}{cx+d}\\]symmetric about the line $y=x$?\n\n$\\textbf{(A) }1282\\qquad\\textbf{(B) }1292\\qquad\\textbf{(C) }1310\\qquad\\textbf{(D) }1320\\qquad\\textbf{(E) }1330$\n",
+    "problem_statement": "A graph is $\\textit{symmetric}$ about a line if the graph remains unchanged after reflection in that line. For how many quadruples of integers $(a,b,c,d)$, where $|a|,|b|,|c|,|d|\\le5$ and $c$ and $d$ are not both $0$, is the graph of\\[y=\\frac{ax+b}{cx+d}\\]symmetric about the line $y=x$?",
+    "Choices": "$\\textbf{(A) }1282\\qquad\\textbf{(B) }1292\\qquad\\textbf{(C) }1310\\qquad\\textbf{(D) }1320\\qquad\\textbf{(E) }1330$",
+    "flag_error": 0,
+    "answer_choice": "B",
+    "answer_value": "1292",
+    "Raw_file": [
+      ".\\Raw_files\\AMC_2024_12A_Problem.sty",
+      ".\\Raw_files\\AMC_2024_12A_Answer.sty"
+    ]
+  }
+}
