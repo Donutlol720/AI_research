@@ -99,38 +99,40 @@ def main(input_path, output_path, model_name, prompt_template):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4)
 
-if __name__ == "__main__":
-
-    ##change here for different output file name
-    model_='llama-4-maverick'
-    model_round='benchmark'  ## different prompt; keep all prompts as record for future use
-    year = '2022_12B'
-
-    #######################
-
-    input_path = f'./Results/AMC_{year}_AP_Input.json'
-    output_path = f'c:/Users/minhe/python/AI_Research/Results/AMC_{year}_{model_}_{model_round}_Results.json'
-    model_name = "meta-llama/llama-4-maverick"
-    #model_name = "deepseek/deepseek-chat"
-    prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
-    
-    main(input_path, output_path, model_name, prompt_template)
-
-
-
 # if __name__ == "__main__":
-#     filelist = [ '2022_12B', '2023_12A','2023_12B', '2024_12A', '2024_12B']
 
 #     ##change here for different output file name
 #     model_='llama-4-maverick'
 #     model_round='benchmark'  ## different prompt; keep all prompts as record for future use
-    
+#     year = '2022_12B'
+
 #     #######################
 
-#     for file_prefix in filelist:
-#         input_path = f'./Results/AMC_{file_prefix}_AP_Input.json'
-#         output_path = f'c:/Users/minhe/python/AI_Research/Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
-#         model_name = "meta-llama/llama-4-maverick"
-#         prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
+#     input_path = f'./Results/AMC_{year}_AP_Input.json'
+#     output_path = f'c:/Users/minhe/python/AI_Research/Results/AMC_{year}_{model_}_{model_round}_Results.json'
+#     model_name = "meta-llama/llama-4-maverick"
+#     #model_name = "deepseek/deepseek-chat"
+#     prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
+    
+#     main(input_path, output_path, model_name, prompt_template)
+
+
+
+if __name__ == "__main__":
+
+    #filelist = [ '2023_12A','2023_12B', '2024_12A', '2024_12B']
+    filelist = [ '2023_12B', '2024_12A', '2024_12B']
+
+    ##change here for different output file name
+    model_='llama-4-maverick'
+    model_round='benchmark'  ## different prompt; keep all prompts as record for future use
+    
+    #######################
+
+    for file_prefix in filelist:
+        input_path = f'./Results/AMC_{file_prefix}_AP_Input.json'
+        output_path = f'c:/Users/minhe/python/AI_Research/Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+        model_name = "meta-llama/llama-4-maverick"
+        prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
         
-#         main(input_path, output_path, model_name, prompt_template)
+        main(input_path, output_path, model_name, prompt_template)
