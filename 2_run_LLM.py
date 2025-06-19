@@ -16,7 +16,6 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-print(OPENROUTER_API_KEY)
 
 #model_name = "x-ai/grok-beta"
 model_name = "meta-llama/llama-4-maverick"

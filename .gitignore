@@ -1,0 +1,5 @@
+.env
+ignore_files/
+*.pyc
+ignore_*
+*.log
