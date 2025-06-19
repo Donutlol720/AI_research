@@ -30,7 +30,7 @@ model_name = "meta-llama/llama-4-maverick"
 
 
 def extract_final_answer(solution):
-    print(solution)
+    
     match = re.search(r'The final answer is: \$\\boxed{(.+?)}\$', solution)
     if match:
         s = match.group(1).replace('\\', '').replace(" ", "") 
@@ -63,7 +63,10 @@ def check_solutions(problems_data):
 
         problem_data['LLM_answer'] = llm_answer
         problem_data['result'] = f"{correct_count}/{total_solutions}"
-        print(f"{problem_key}: {problem_data['result']}")
+              
+        
+
+        
 
 def main(input_path, output_path, model_name, prompt_template):
     with open(input_path, 'r', encoding='utf-8') as f:
@@ -75,7 +78,7 @@ def main(input_path, output_path, model_name, prompt_template):
     )
     results = {}
 
-    for i in range(1, 26):  # Adjust range as needed
+    for i in range(1,26):  # Adjust range as needed
         problem_key = f"Problem {i}"
         if problem_key in problems_data:
             problem = problems_data[problem_key]['problem_statement']
