@@ -36,7 +36,7 @@ def visualize_results(problem_keys, results):
     plt.show()
 
 if __name__ == "__main__":
-    file_path = r'C:\Users\minhe\python\AI_research\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results.json'
+    file_path = r'.\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results.json'
     problem_keys, results, error_flag_count = analyze_results(file_path)
 
     print("Problem Keys and Results:")

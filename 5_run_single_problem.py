@@ -9,7 +9,7 @@ def load_json(file_path):
         return json.load(f)
 
 
-file_path = r'c:\Users\minhe\python\AI_research\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results.json'  
+file_path = r'.\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results.json'  
 with open(file_path, 'r', encoding='utf-8') as f:
     data = json.load(f)     
 
@@ -59,8 +59,8 @@ result = response.choices[0].message.content
 #         json.dump(json_data, f, indent=2)
 
 # if __name__ == "__main__":
-#     input_path = r'c:\Users\minhe\python\AI_research\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results.json'
-#     output_path = r'c:\Users\minhe\python\AI_research\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results_updated.json'
+#     input_path = r'.\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results.json'
+#     output_path = r'.\Results\AMC_2022_12A_llama-4-maverick_benchmark_Results_updated.json'
     
 #     # Load JSON data
 #     json_data = load_json(input_path)

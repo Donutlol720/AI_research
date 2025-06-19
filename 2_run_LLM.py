@@ -109,7 +109,7 @@ def main(input_path, output_path, model_name, prompt_template):
 #     #######################
 
 #     input_path = f'./Results/AMC_{year}_AP_Input.json'
-#     output_path = f'c:/Users/minhe/python/AI_Research/Results/AMC_{year}_{model_}_{model_round}_Results.json'
+#     output_path = f'./Results/AMC_{year}_{model_}_{model_round}_Results.json'
 #     model_name = "meta-llama/llama-4-maverick"
 #     #model_name = "deepseek/deepseek-chat"
 #     prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     for file_prefix in filelist:
         input_path = f'./Results/AMC_{file_prefix}_AP_Input.json'
-        output_path = f'c:/Users/minhe/python/AI_Research/Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+        output_path = f'./Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
         model_name = "meta-llama/llama-4-maverick"
         prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
         

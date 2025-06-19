@@ -18,7 +18,7 @@ def analyze_results(file_path):
 
 ### run specific file
 # if __name__ == "__main__":
-#     file_path = r'C:\Users\minhe\python\AI_research\Results\AMC_2023_12A_llama-4-maverick_benchmark_Results.json'
+#     file_path = r'.\Results\AMC_2023_12A_llama-4-maverick_benchmark_Results.json'
     
 #     problem_keys, results, error_flag_count = analyze_results(file_path)
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     #######################
 
     for file_prefix in filelist:
-        file_path = rf'C:\Users\minhe\python\AI_research\Results\AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+        file_path = rf'.\Results\AMC_{file_prefix}_{model_}_{model_round}_Results.json'
     
         problem_keys, results, error_flag_count = analyze_results(file_path)
         print(file_prefix )
