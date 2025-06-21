@@ -37,6 +37,8 @@ if __name__ == "__main__":
 
     ##change here for different output file name
     model_='llama-4-maverick'
+    #model_='gemma-3'
+
     model_round='benchmark'  ## different prompt; keep all prompts as record for future use
     
     #######################

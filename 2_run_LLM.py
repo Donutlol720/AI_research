@@ -18,7 +18,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
 #model_name = "x-ai/grok-beta"
-model_name = "meta-llama/llama-4-maverick"
+#model_name = "meta-llama/llama-4-maverick"
 #model_name = "meta-llama/llama-3.3-8b-instruct:free"
 # model="openrouter/qwen/qwq-32b:free",
 
@@ -29,9 +29,14 @@ model_name = "meta-llama/llama-4-maverick"
 
 
 
+
+
 def extract_final_answer(solution):
     
-    match = re.search(r'The final answer is: \$\\boxed{(.+?)}\$', solution)
+    
+    match = re.search(r'The final answer is: \$\\boxed{(.+?)}\$', solution) or \
+            re.search(r'The final answer is: \\boxed{(.+?)} \\', solution)
+    
     if match:
         s = match.group(1).replace('\\', '').replace(" ", "") 
         return s
@@ -120,11 +125,11 @@ def main(input_path, output_path, model_name, prompt_template):
 
 if __name__ == "__main__":
 
-    #filelist = [ '2023_12A','2023_12B', '2024_12A', '2024_12B']
-    filelist = [ '2023_12B', '2024_12A', '2024_12B']
+    filelist = [ '2024_12A','2024_12B']
+    #filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
 
     ##change here for different output file name
-    model_='llama-4-maverick'
+    model_='phi-4'
     model_round='benchmark'  ## different prompt; keep all prompts as record for future use
     
     #######################
@@ -132,7 +137,11 @@ if __name__ == "__main__":
     for file_prefix in filelist:
         input_path = f'./Results/AMC_{file_prefix}_AP_Input.json'
         output_path = f'./Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
-        model_name = "meta-llama/llama-4-maverick"
-        prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
+        #model_name = "meta-llama/llama-4-maverick"
+        model_name = "microsoft/phi-4"
+        prompt_template = "1. if the final answer is an improper fraction,  \
+                                the final step convert improper fraction to mixed fractions.\
+                                        end with: The final answer is : {problem}"
+        prompt_template = "ending with The final answer is: {problem}"                                    
         
         main(input_path, output_path, model_name, prompt_template)
