@@ -55,10 +55,10 @@ json_analyst = Agent(
 def extract_solution(problems):
     analysis_task = Task(
         description=(
-            f"read the json file from {problems}, there are 25 problems from Problem 1 to Problem 25. "
-            "look at the problems one by one, find the final answer for each problem from five solutions in solutions field. "
+            f"read the json file from {problems} "
+            "look at the problems one by one, find the final answer for each problem from solutions in solutions field. "
             "and then compare the answers with the value in the answer_value field for each problem to see how many of them are correct. "
-            "if all 5 answers are correct, output correct_final_answer: 5/5, pay attention to laTex format answer and mixed fraction. "
+            "if all answers are correct, output correct_final_answer like correct/total such as: 5/5, pay attention to laTex format answer and mixed fraction. "
             "Ensure the output is ONLY the JSON object, nothing else. Only output raw JSON with no extra text"
             "Example: {'Problem 1': {'answers_from_solution':['4','5'], 'correct_final_answer':'5/5'}}"
         ),
@@ -112,47 +112,47 @@ def main(input_path):
 
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    #filelist = [ '2023_12A','2023_12B']
-    filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
+#     #filelist = [ '2023_12A','2023_12B']
+#     filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
 
-    ##change here for different output file name
-    #model_ = 'llama-4-maverick'
-    #model_='gemma-3'
-    model_='phi-4'
-    model_round='benchmark'  ## different prompt; keep all prompts as record for future use
+#     ##change here for different output file name
+#     #model_ = 'llama-4-maverick'
+#     #model_='gemma-3'
+#     model_='phi-4'
+#     model_round='benchmark'  ## different prompt; keep all prompts as record for future use
     
-    #######################
+#     #######################
 
-    for file_prefix in filelist:
+#     for file_prefix in filelist:
         
-        input_path = f'./Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
-        print(file_prefix)
-        main(input_path)
+#         input_path = f'./Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+#         print(file_prefix)
+#         main(input_path)
 
 
 ####################################################
 ### run single file
 
-# filepath = r".\Results\AMC_2022_12A_phi-4_benchmark_Results.json"   
-# with open(filepath, 'r') as f:
-#     problems = json.load(f)    
+filepath = r".\Results\COT1\AMC_2022_12A_gemma-3_COT1_Results.json"
+with open(filepath, 'r') as f:
+    problems = json.load(f)    
 
-# test_result = extract_solution(problems)
-# cleaned_str = remove_json_block_wrapper(test_result.raw)
-# json_output = json.loads(cleaned_str)
-# print("\n--- Parsed JSON Output ---")
-# print(json.dumps(json_output, indent=2))
+test_result = extract_solution(problems)
+cleaned_str = remove_json_block_wrapper(test_result.raw)
+json_output = json.loads(cleaned_str)
+print("\n--- Parsed JSON Output ---")
+print(json.dumps(json_output, indent=2))
 
 
     
-# for key, value in json_output.items():
-#     problems[key]["result"] = value["correct_final_answer"]
-#     problems[key]["LLM_answer"] = value["answers_from_solution"]
+for key, value in json_output.items():
+    problems[key]["result"] = value["correct_final_answer"]
+    problems[key]["LLM_answer"] = value["answers_from_solution"]
 
-# with open(filepaht, 'w', encoding='utf-8') as f:
-#     json.dump(problems, f, indent=2)
+with open(filepath, 'w', encoding='utf-8') as f:
+    json.dump(problems, f, indent=2)
 
 
 
