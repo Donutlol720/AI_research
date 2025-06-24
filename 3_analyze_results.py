@@ -36,16 +36,16 @@ if __name__ == "__main__":
     filelist = [ '2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
 
     ##change here for different output file name
-    #model_='llama-4-maverick'
+    model_='llama-4-maverick'
     #model_='gemma-3'
-    model_ = "phi-4"
-    #model_round='benchmark'  ## different prompt; keep all prompts as record for future use
-    model_round='COT1' 
+    #model_ = "phi-4"
+    model_round='benchmark'  ## different prompt; keep all prompts as record for future use
+    #model_round='COT1' 
     #######################
 
     for file_prefix in filelist:
-        #file_path = rf'.\Results\AMC_{file_prefix}_{model_}_{model_round}_Results.json'
-        file_path = rf'.\Results\COT1\AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+        file_path = rf'.\Results\AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+        #file_path = rf'.\Results\COT1\AMC_{file_prefix}_{model_}_{model_round}_Results.json'
         problem_keys, results, error_flag_count = analyze_results(file_path)
         print(file_prefix )
         print("Problem Keys and Results:")

@@ -119,8 +119,8 @@ def main(input_path, output_path, model_name, prompt_template):
 
 if __name__ == "__main__":
 
-    #filelist = [ '2024_12A', '2024_12B']
-    filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
+    filelist = [ '2023_12B','2024_12A', '2024_12B']
+    #filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
 
     ##change here for different output file name
     #model_='phi-4'
