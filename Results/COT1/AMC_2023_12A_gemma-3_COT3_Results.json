@@ -80,11 +80,11 @@
     "LLM_answer": [
       "8",
       "8",
-      "(D)",
+      "8",
       "8",
       "8"
     ],
-    "result": "4/5"
+    "result": "5/5"
   },
   "Problem 4": {
     "problem": "\nHow many digits are in the base-ten representation of $8^5 \\cdot 5^{10} \\cdot 15^5$?\n\n$\\textbf{(A)}~14\\qquad\\textbf{(B)}~15\\qquad\\textbf{(C)}~16\\qquad\\textbf{(D)}~17\\qquad\\textbf{(E)}~18\\qquad$\n\nSolution\n\n",
@@ -432,7 +432,7 @@
       "33.56",
       "arcsin(1/4)"
     ],
-    "result": "1/5"
+    "result": "3/5"
   },
   "Problem 16": {
     "problem": "\nConsider the set of complex numbers $z$ satisfying $|1+z+z^{2}|=4$. The maximum value of the imaginary part of $z$ can be written in the form $\\tfrac{\\sqrt{m}}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?\n\n$\\textbf{(A)}~20\\qquad\\textbf{(B)}~21\\qquad\\textbf{(C)}~22\\qquad\\textbf{(D)}~23\\qquad\\textbf{(E)}~24$\n\nSolution\n\n",

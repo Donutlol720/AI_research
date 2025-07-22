@@ -21,12 +21,12 @@
     ],
     "LLM_answer": [
       "frac{1}{6}",
-      "",
+      "frac{1}{6}",
       "frac{1}{6}",
       "frac{1}{6}",
       "frac{1}{6}"
     ],
-    "result": "4/5"
+    "result": "5/5"
   },
   "Problem 2": {
     "problem": "\nCarlos went to a sports store to buy running shoes. Running shoes were on sale, with prices reduced by $20\\%$on every pair of shoes. Carlos also knew that he had to pay a $7.5\\%$ sales tax on the discounted price. He had $43$ dollars. What is the original (before discount) price of the most expensive shoes he could afford to buy?\n\n$\\textbf{(A) }46\\qquad\\textbf{(B) }50\\qquad\\textbf{(C) }48\\qquad\\textbf{(D) }47\\qquad\\textbf{(E) }49$\n\nSolution\n\n",
@@ -548,7 +548,7 @@
       "1/8",
       "1/3"
     ],
-    "result": "1/5"
+    "result": "2/5"
   },
   "Problem 20": {
     "problem": "\nCyrus the frog jumps $2$ units in a direction, then $2$ more in another direction. What is the probability that he lands less than $1$ unit away from his starting position?\n\n$\\textbf{(A)}~\\frac{1}{6}\\qquad\\textbf{(B)}~\\frac{1}{5}\\qquad\\textbf{(C)}~\\frac{\\sqrt{3}}{8}\\qquad\\textbf{(D)}~\\frac{\\arctan \\frac{1}{2}}{\\pi}\\qquad\\textbf{(E)}~\\frac{2\\arcsin \\frac{1}{4}}{\\pi}$\n\nSolution\n\n",

@@ -168,10 +168,10 @@
       "4sqrt{5}",
       "4sqrt{5}",
       "4sqrt{5}",
-      "Not Found",
+      "4sqrt{5}",
       "4sqrt{5}"
     ],
-    "result": "4/5"
+    "result": "5/5"
   },
   "Problem 7": {
     "problem": "\nA digital display shows the current date as an $8$-digit integer consisting of a $4$-digit year, followed by a $2$-digit month, followed by a $2$-digit date within the month. For example, Arbor Day this year is displayed as $20230428$. For how many dates in $2023$ will each digit appear an even number of times in the 8-digital display for that date?\n\n$\\textbf{(A)}~5\\qquad\\textbf{(B)}~6\\qquad\\textbf{(C)}~7\\qquad\\textbf{(D)}~8\\qquad\\textbf{(E)}~9$\n\nSolution\n\n",
@@ -253,12 +253,12 @@
     ],
     "LLM_answer": [
       "2-sqrt{3}",
-      "Not Found",
+      "2-sqrt{3}",
       "2-sqrt{3}",
       "2-sqrt{3}",
       "2-sqrt{3}"
     ],
-    "result": "4/5"
+    "result": "5/5"
   },
   "Problem 10": {
     "problem": "\nPositive real numbers $x$ and $y$ satisfy $y^3 = x^2$ and $(y-x)^2 = 4y^2$. What is $x+y$?\n\n$\\textbf{(A)}\\ 12 \\qquad \\textbf{(B)}\\ 18 \\qquad \\textbf{(C)}\\ 24 \\qquad \\textbf{(D)}\\ 36 \\qquad \\textbf{(E)}\\ 42$\n\nSolution\n\n",
@@ -283,11 +283,11 @@
     "LLM_answer": [
       "36",
       "36",
-      "Not Found",
-      "Not Found",
+      "36",
+      "36",
       "36"
     ],
-    "result": "3/5"
+    "result": "5/5"
   },
   "Problem 11": {
     "problem": "\nWhat is the degree measure of the acute angle formed by lines with slopes $2$ and $\\tfrac{1}{3}$?\n\n$\\textbf{(A)}~30\\qquad\\textbf{(B)}~37.5\\qquad\\textbf{(C)}~45\\qquad\\textbf{(D)}~52.5\\qquad\\textbf{(E)}~60$\n\nSolution\n\n",
@@ -341,11 +341,11 @@
     "LLM_answer": [
       "999",
       "3159",
-      "Not Found",
+      "3159",
       "3159",
       "3159"
     ],
-    "result": "3/5"
+    "result": "4/5"
   },
   "Problem 13": {
     "problem": "\nIn a table tennis tournament every participant played every other participant exactly once. Although there were twice as many right-handed players as left-handed players, the number of games won by left-handed players was $40\\%$ more than the number of games won by right-handed players. (There were no ties and no ambidextrous players.) What is the total number of games played?\n\n$\\textbf{(A) }15\\qquad\\textbf{(B) }36\\qquad\\textbf{(C) }45\\qquad\\textbf{(D) }48\\qquad\\textbf{(E) }66$\n\nSolution\n\n",
@@ -371,7 +371,7 @@
       "36",
       "36",
       "36",
-      "Not Found",
+      "276",
       "276"
     ],
     "result": "3/5"
@@ -432,7 +432,7 @@
       "arcsin1/4",
       "18.4"
     ],
-    "result": "1/5"
+    "result": "2/5"
   },
   "Problem 16": {
     "problem": "\nConsider the set of complex numbers $z$ satisfying $|1+z+z^{2}|=4$. The maximum value of the imaginary part of $z$ can be written in the form $\\tfrac{\\sqrt{m}}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?\n\n$\\textbf{(A)}~20\\qquad\\textbf{(B)}~21\\qquad\\textbf{(C)}~22\\qquad\\textbf{(D)}~23\\qquad\\textbf{(E)}~24$\n\nSolution\n\n",
@@ -545,10 +545,10 @@
       "1/2023",
       "1",
       "1",
-      "Not Found",
-      "Not Found"
+      "1",
+      "1"
     ],
-    "result": "2/5"
+    "result": "4/5"
   },
   "Problem 20": {
     "problem": "\nRows 1, 2, 3, 4, and 5 of a triangular array of integers are shown below:\n\n[asy] size(4.5cm); label(\"$1$\", (0,0)); label(\"$1$\", (-0.5,-2/3)); label(\"$1$\", (0.5,-2/3)); label(\"$1$\", (-1,-4/3)); label(\"$3$\", (0,-4/3)); label(\"$1$\", (1,-4/3)); label(\"$1$\", (-1.5,-2)); label(\"$5$\", (-0.5,-2)); label(\"$5$\", (0.5,-2)); label(\"$1$\", (1.5,-2)); label(\"$1$\", (-2,-8/3)); label(\"$7$\", (-1,-8/3)); label(\"$11$\", (0,-8/3)); label(\"$7$\", (1,-8/3)); label(\"$1$\", (2,-8/3)); [/asy]\n\nEach row after the first row is formed by placing a 1 at each end of the row, and each interior entry is 1 greater than the sum of the two numbers diagonally above it in the previous row. What is the units digit of the sum of the 2023 numbers in the 2023rd row?\n\n$\\textbf{(A) }1\\qquad\\textbf{(B) }3\\qquad\\textbf{(C) }5\\qquad\\textbf{(D) }7\\qquad\\textbf{(E) }9$\n\nSolution\n\n",

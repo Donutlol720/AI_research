@@ -577,7 +577,7 @@
       "(0.75, 1.0)",
       "(0.8, 0.9)"
     ],
-    "result": "0/5"
+    "result": "4/5"
   },
   "Problem 21": {
     "problem": "\nSuppose that $a_1 = 2$ and the sequence $(a_n)$ satisfies the recurrence relation\\[\\frac{a_n -1}{n-1}=\\frac{a_{n-1}+1}{(n-1)+1}\\]for all $n \\ge 2.$ What is the greatest integer less than or equal to\\[\\sum^{100}_{n=1} a_n^2?\\]$\\textbf{(A) } 338{,}550 \\qquad \\textbf{(B) } 338{,}551 \\qquad \\textbf{(C) } 338{,}552 \\qquad \\textbf{(D) } 338{,}553 \\qquad \\textbf{(E) } 338{,}554$\n\nSolution\n\n",

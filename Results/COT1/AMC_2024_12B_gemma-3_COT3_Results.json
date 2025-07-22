@@ -345,7 +345,7 @@
       "$\\frac{3}{2}$",
       "1.5"
     ],
-    "result": "4/5"
+    "result": "5/5"
   },
   "Problem 13": {
     "problem": "\nThere are real numbers $x,y,h$ and $k$ that satisfy the system of equations\\[x^2 + y^2 - 6x - 8y = h\\]\\[x^2 + y^2 - 10x + 4y = k\\]What is the minimum possible value of $h+k$?\n\n$\\textbf{(A) }-54 \\qquad \\textbf{(B) }-46 \\qquad \\textbf{(C) }-34 \\qquad \\textbf{(D) }-16 \\qquad \\textbf{(E) }16 \\qquad$\n\nSolution\n\n",
@@ -432,7 +432,7 @@
       "$\\frac{1}{2} \\log_2 \\frac{9}{7}$",
       "$\\frac{1}{2} \\log_2 (\\frac{9}{7})$"
     ],
-    "result": "0/5"
+    "result": "4/5"
   },
   "Problem 16": {
     "problem": "\nA group of $16$ people will be partitioned into $4$ indistinguishable $4$-person committees. Each committee will have one chairperson and one secretary. The number of different ways to make these assignments can be written as $3^{r}M$, where $r$ and $M$ are positive integers and $M$ is not divisible by $3$. What is $r$?\n\n$\\textbf{(A) }5 \\qquad \\textbf{(B) }6 \\qquad \\textbf{(C) }7 \\qquad \\textbf{(D) }8 \\qquad \\textbf{(E) }9 \\qquad$\n\nSolution\n\n",

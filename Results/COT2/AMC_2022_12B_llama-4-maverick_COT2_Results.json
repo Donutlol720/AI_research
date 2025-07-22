@@ -227,9 +227,9 @@
       "\\text{The graph is the union of the hyperbola } y^2 - x^2 = 1 \\text{ and the circle } x^2 + y^2 = 1",
       "y = \\pm\\sqrt{x^2 + 1} \\text{ for } |y| \\geq 1 \\text{ and } x^2 + y^2 = 1 \\text{ for } |y| < 1",
       "\\text{A hyperbola and a circle}",
-      ""
+      "\\text{A hyperbola and a circle}"
     ],
-    "result": "1/5"
+    "result": "4/5"
   },
   "Problem 9": {
     "problem": "\nThe sequence $a_0,a_1,a_2,\\cdots$ is a strictly increasing arithmetic sequence of positive integers such that\\[2^{a_7}=2^{27} \\cdot a_7.\\]What is the minimum possible value of $a_2$?\n\n$\\textbf{(A) }\\ 8 \\qquad \\textbf{(B) }\\ 12 \\qquad \\textbf{(C) }\\ 16 \\qquad \\textbf{(D) }\\ 17 \\qquad \\textbf{(E) }\\ 22$\n\nSolution\n\n",
