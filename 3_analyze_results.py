@@ -32,11 +32,12 @@ def analyze_results(file_path):
 ## for all results
 if __name__ == "__main__":
 
-    #filelist = [ '2023_12A','2023_12B', '2024_12A', '2024_12B']
-    filelist = [ '2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
+    filelist = [ '2022_12A','2022_12B']
+    #filelist = [ '2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
 
     ##change here for different output file name
-    model_='llama-4-maverick'
+    #model_='llama-4-maverick'
+    model_='gemini-2.5-pro'
     #model_='gemma-3'
     #model_ = "phi-4"
     model_round='benchmark'  ## different prompt; keep all prompts as record for future use
