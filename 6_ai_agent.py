@@ -1,0 +1,218 @@
+from crewai import Agent, Task, Crew, Process
+from crewai_tools import ScrapeWebsiteTool
+from dotenv import load_dotenv
+import os
+import json
+import requests
+import re
+import time
+# from bs4 import BeautifulSoup
+# from urllib.parse import urlparse, parse_qs
+from crewai import LLM
+from datetime import datetime
+
+# Load environment variables
+
+#google/gemini-2.5-flash
+
+load_dotenv(".env") 
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY") 
+GEMINI_API_KEY=os.getenv("GEMINI_API_KEY")
+
+# Configure LLM
+# llm = LLM(
+#     #model = "openrouter/deepseek/deepseek-chat-v3-0324",
+#     model = "openrouter/deepseek/deepseek-chat",
+#     #model = "google/gemini-2.5-flash",
+#     base_url="https://openrouter.ai/api/v1",
+#     api_key=OPENROUTER_API_KEY
+# )
+
+llm = LLM(
+    #model = "/deepseek/deepseek-chat",
+    #model = "openai/gpt-4.1",
+    #model="gemini/gemini-2.5-flash",
+    model="gemini/gemini-2.5-pro",
+    temperature=0,
+)
+
+
+json_analyst = Agent(
+    role="json file expert include read, write, analysis json file",
+    goal="Extract answers from a json file",
+    backstory="Specializes in searching for and extracting information from json files",
+    #tools=[ScrapeWebsiteTool()],
+    llm=llm,
+    verbose=False
+)
+
+# Problem_year_agent = Agent(
+#     role='USA Coding Olympiad expert and literature expert',
+#     goal='From the url, retrieve only the the year,month and problem number of the contest.',
+#     backstory='Expert in extracting problem year month and problem number from url',
+#     tools=[ScrapeWebsiteTool()],
+#     llm=llm,
+#     verbose=False
+#)
+
+def extract_solution(problems):
+    analysis_task = Task(
+        description=(
+            f"read the json file from {problems}. there are 25 problems in the json file. "
+            "look at the problems one by one, find the final answer for each problem from 5 solutions in solutions field. "
+            "and then compare the answers with the value in the answer_value field for each problem to see how many of them are correct. "
+            "output answer_from_solutions and correct_final_answer like 3/5, pay attention to laTex format answer and mixed fraction. "
+            "Ensure the output is ONLY the JSON object, no other txt"
+            "Example: {'Problem 1': {'answers_from_solution':['4','9','9','19','25'], 'correct_final_answer':'5/5'}}"
+        ),
+        expected_output="output a valid json string with problem key, answers from solutions and the correct final answer like 5/5. \
+                            Only output raw JSON with MO extra text\
+                            Example: {'Problem 1': {'answers_from_solution':['4','4','4','8','8'], 'correct_final_answer':'3/5'}}" ,
+        agent=json_analyst,
+        output_file="ignore_test_.json"
+         )
+
+
+    # Create crew and assign tasks
+    crew = Crew(
+        agents=[json_analyst],
+        tasks=[analysis_task],
+        
+            )
+
+    result = crew.kickoff()
+    return result
+
+def remove_json_block_wrapper(s):
+    # Try to find content after ```json with closing ```
+    pattern_with_backticks = r'```json\n(.*?)\n```'
+    match_with_backticks = re.search(pattern_with_backticks,s, re.DOTALL)
+    
+    if match_with_backticks:
+        return match_with_backticks.group(1)
+    else:
+        # Fallback: find content after ```json until the last valid JSON closing brace
+        pattern_no_backticks = r'```json\n(.*?\n})'
+        match_no_backticks = re.search(pattern_no_backticks, s, re.DOTALL)
+        
+        if match_no_backticks:
+            return match_no_backticks.group(1)
+
+    return s
+
+# def remove_json_block_wrapper(s):
+#     """
+#     Remove triple-quoted `''' json` and closing `'''` from a string.
+#     """
+#     pattern = r'```json\n(.*?)\n```'
+#     match = re.search(pattern, s, re.DOTALL)
+    
+#     if match:
+#         json_content = match.group(1)
+#         return json_content
+#     else:
+#         print( "I did not find a json block")
+#         return None
+
+    # if s.strip().startswith("```json"):
+    #     s = s.strip()
+    #     print("I found a json st the beggining",s[0:7])
+    #     print("s1",s)
+    #     s = s[len("'''json"):].strip()
+    #     print("s2",s)
+    #     if s.endswith("```"):
+    #         s = s[:-3].strip()
+    #return s
+
+
+
+def main(input_path):
+    with open(input_path, 'r') as f:
+        problems = json.load(f)    
+
+    extracted_data = {}
+
+    for problem_id, problem_data in problems.items():
+        extracted_data[problem_id] = {
+            #"solutions": problem_data["solutions"],
+            "solutions": [solution[-150:] for solution in problem_data["solutions"]],
+            "answer_value": problem_data["answer_value"]
+        }
+
+    # Print the extracted JSON
+    #print(json.dumps(extracted_data, indent=2))
+
+    test_result = extract_solution(extracted_data)
+    print('test_result.raw', test_result.raw)
+
+    cleaned_str = remove_json_block_wrapper(test_result.raw)
+    #print(cleaned_str)
+    json_output = json.loads(cleaned_str)
+    #print("\n--- Parsed JSON Output ---")
+    #print(json.dumps(json_output, indent=2))
+    for key, value in json_output.items():
+        problems[key]["result"] = value["correct_final_answer"]
+        problems[key]["LLM_answer"] = value["answers_from_solution"]
+
+     # Combine json_output and extracted_data for debug
+    combined_data = {}
+    for key in extracted_data:
+        combined_data[key] = extracted_data[key].copy()
+        if key in json_output:
+            combined_data[key].update(json_output[key])
+
+    # Print combined JSON
+    print("\n--- Combined JSON Output ---")
+    print(json.dumps(combined_data, indent=2))
+
+    with open(input_path, 'w', encoding='utf-8') as f:
+        json.dump(problems, f, indent=2)
+
+if __name__ == "__main__":
+
+    #filelist = [ '2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
+    filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
+
+    ##change here for different output file name
+    #model_ = 'llama-4-maverick'
+    #model_='gemma-3'
+    model_='phi-4'
+    model_round='COT1'  ## different prompt; keep all prompts as record for future use
+    #model_round='COT1' 
+    #######################
+
+    for file_prefix in filelist:
+        
+        input_path = f'./Results/COT1/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
+        print(file_prefix, model_round, model_)
+        main(input_path)
+
+        
+
+####################################################
+### run single file
+
+# filepath = r".\Results\COT1\AMC_2022_12A_phi-4_COT1_Results.json"
+# with open(filepath, 'r') as f:
+#     problems = json.load(f)    
+
+# test_result = extract_solution(problems)
+# cleaned_str = remove_json_block_wrapper(test_result.raw)
+# json_output = json.loads(cleaned_str)
+# print("\n--- Parsed JSON Output ---")
+# print(json.dumps(json_output, indent=2))
+
+
+    
+# for key, value in json_output.items():
+#     problems[key]["result"] = value["correct_final_answer"]
+#     problems[key]["LLM_answer"] = value["answers_from_solution"]
+
+# with open(filepath, 'w', encoding='utf-8') as f:
+#     json.dump(problems, f, indent=2)
+
+
+
+
+
+
