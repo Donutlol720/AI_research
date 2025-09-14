@@ -41,7 +41,7 @@ def solve_problem_with_gemini(problem, client, model_name, prompt_template="{pro
     # Format the prompt with the problem
     prompt = prompt_template.format(problem=problem)
     #print(prompt)
-    response = client.chat.completions.create(
+    response = client.chat.completions.create(  
         model=model_name,
         messages=[{"role": "user", "content": prompt}],
     )
@@ -224,5 +224,5 @@ if __name__ == "__main__":
         #                             Step 12: Since the original question asked for the number of solutions to the equation, and these six values of $k$ produce valid values of $n$, our answer must be $6$.\
         #                             Step 13: Therefore, the final answer is $6$.\
         #                             ------------------\
-        #                             Now solve the following problem. it is a multi-choice problem, Compare your answer with multiple-choice options (A)-(E). your answer should be one of the choices. Remember to work carefully and rigorously. Let's think step-by-step: {problem}\
+        #                             Now solve the following problem. Remember to work carefully and rigorously. Let's think step-by-step: {problem}\
         #                                 "
