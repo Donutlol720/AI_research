@@ -516,10 +516,10 @@
       "12",
       "12",
       "6",
-      "6",
+      "12",
       "6"
     ],
-    "result": "3/5"
+    "result": "2/5"
   },
   "Problem 19": {
     "problem": "\nCyclic quadrilateral $ABCD$ has lengths $BC=CD=3$ and $DA=5$ with $\\angle CDA=120^\\circ$. What is the length of the shorter diagonal of $ABCD$?\n\n$\\textbf{(A) }\\frac{31}7 \\qquad \\textbf{(B) }\\frac{33}7 \\qquad \\textbf{(C) }5 \\qquad \\textbf{(D) }\\frac{39}7 \\qquad \\textbf{(E) }\\frac{41}7 \\qquad$\n\nSolution\n\n",

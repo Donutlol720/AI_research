@@ -1,147 +1,94 @@
-import json
 import re
-from openai import OpenAI
 
-from dotenv import load_dotenv
-import os
+# Dummy tools (replace with real ones)
+def call_wolfram(query):
+    print(f"[Calling Wolfram with query: {query}]")
+    return f"Wolfram result for: {query}"
 
+def run_code(code):
+    print(f"[Running code: {code}]")
+    try:
+        exec_globals = {}
+        exec(code, exec_globals)
+        return str(exec_globals.get("result", ""))
+    except Exception as e:
+        return f"Error: {e}"
 
-# print(os.environ.get("TOGETHER_API_KEY"))  
-# print(os.getenv("TOGETHER_API_KEY"))  
+# Dummy model (replace with real model call)
+def chat_with_model(prompt):
+    print(f"\n=== MODEL SEES ===\n{prompt[-600:]}\n=== END ===")
+    return input("Model reply: ")
 
-load_dotenv(".env") 
+# Main loop
+def react_loop(question, min_cycles=2):
+    context = f"""
+You are an AI that solves problems by THINKING, ACTING with tools, OBSERVING results, and repeating this process step-by-step until you can give a FINAL ANSWER.
 
+You can call tools:
+    - Wolfram[<query>] for knowledge and computation
+    - Code[<python code>] for running Python code
 
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+You MUST follow this format:
+    THINK: <your reasoning>
+    ACT: <tool>[<input>]
+    OBSERVE: <tool output>
+    THINK: <your reasoning> ...
+    (repeat until ready)
+    FINAL ANSWER: <your answer>
 
+**Always perform at least 2 THINK → ACT → OBSERVE cycles** before giving FINAL ANSWER.
 
-#model_name = "x-ai/grok-beta"
-#model_name = "meta-llama/llama-4-maverick"
-#model_name = "meta-llama/llama-3.3-8b-instruct:free"
-# model="openrouter/qwen/qwq-32b:free",
+Example 1:
 
-#model_name = "google/gemini-2.5-pro-preview"
-#model_name = 'google/gemini-2.5-flash-preview-05-20'
-#model_name = "openrouter/deepseek/deepseek-chat"
-#model_name = "deepseek/deepseek-r1-0528:free"
+Question: What is the integral of sin(x)?
 
+THINK: I will use Wolfram to compute the integral.
+ACT: Wolfram[integrate sin(x)]
+OBSERVE: -cos(x) + C
+THINK: The result looks correct.
+ACT: Code[print("Check: d/dx of -cos(x) is sin(x)")]
+OBSERVE: sin(x)
+THINK: Confirmed.
+FINAL ANSWER: -cos(x) + C
 
+---
 
+Question: {question}
+THINK:
+"""
 
+    done = False
+    act_observe_cycles = 0
 
-def extract_final_answer(solution):
-    
-    
-    match = re.search(r'The final answer is: \$\\boxed{(.+?)}\$', solution) or \
-            re.search(r'The final answer is: \\boxed{(.+?)} \\', solution)
-    
-    if match:
-        s = match.group(1).replace('\\', '').replace(" ", "") 
-        return s
-    return None
+    while not done:
+        response = chat_with_model(context)
+        context += response
 
-def solve_problem_with_gemini(problem, client, model_name, prompt_template="{problem} "):
-    # Format the prompt with the problem
-    prompt = prompt_template.format(problem=problem)
-    #print(prompt)
-    response = client.chat.completions.create(
-        model=model_name,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return response.choices[0].message.content
+        act_match = re.search(r'ACT:\s*(\w+)\[(.*?)\]', response, re.DOTALL)
+        if act_match:
+            tool_name = act_match.group(1).strip()
+            tool_input = act_match.group(2).strip()
 
-def check_solutions(problems_data):
-    
-    for problem_key, problem_data in problems_data.items():
-        correct_answer = problem_data['answer_value']
-        solutions = problem_data['solutions']
-        
-        #correct_count = sum(1 for solution in solutions if correct_answer in solution)
-        #print(correct_answer)
-        
-        llm_answer = [extract_final_answer(solution) for solution in solutions]
-        correct_count = sum(1 for solution in solutions if extract_final_answer(solution) == correct_answer)
-        
-        total_solutions = len(solutions)
+            if tool_name.lower() == "wolfram":
+                result = call_wolfram(tool_input)
+            elif tool_name.lower() == "code":
+                result = run_code(tool_input)
+            else:
+                result = "Unknown tool"
 
-        problem_data['LLM_answer'] = llm_answer
-        problem_data['result'] = f"{correct_count}/{total_solutions}"
-              
-        
+            observe = f"\nOBSERVE: {result}\nTHINK:"
+            context += observe
+            act_observe_cycles += 1
+            print(f"[OBSERVE: {result}]")
 
-        
+        elif "FINAL ANSWER:" in response:
+            if act_observe_cycles < min_cycles:
+                print(f"[Model tried to give FINAL ANSWER too early, forcing another THINK!]")
+                context = context.rsplit("FINAL ANSWER:", 1)[0] + "\nTHINK:"
+            else:
+                done = True
+                print("\n=== FINAL ANSWER ===")
+                print(response.split("FINAL ANSWER:")[-1].strip())
 
-def main(input_path, output_path, model_name, prompt_template):
-    with open(input_path, 'r', encoding='utf-8') as f:
-        problems_data = json.load(f)
-    
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=OPENROUTER_API_KEY
-    )
-    results = {}
-
-    for i in range(1,26):  # Adjust range as needed
-        problem_key = f"Problem {i}"
-        if problem_key in problems_data:
-            problem = problems_data[problem_key]['problem_statement']
-            result_data = problems_data[problem_key]
-            result_data["model"] = model_name
-            result_data["prompt"] = prompt_template
-            result_data["solutions"] = []
-
-            for _ in range(5):  # Repeat each problem 2 times
-                solution = solve_problem_with_gemini(problem, client, model_name, prompt_template)
-                result_data["solutions"].append(solution)
-
-            results[problem_key] = result_data
-
-    # Check solutions and update the JSON data with the correct count
-    check_solutions(results)
-
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=4)
-
-# if __name__ == "__main__":
-
-#     ##change here for different output file name
-#     model_='llama-4-maverick'
-#     model_round='benchmark'  ## different prompt; keep all prompts as record for future use
-#     year = '2022_12B'
-
-#     #######################
-
-#     input_path = f'./Results/AMC_{year}_AP_Input.json'
-#     output_path = f'./Results/AMC_{year}_{model_}_{model_round}_Results.json'
-#     model_name = "meta-llama/llama-4-maverick"
-#     #model_name = "deepseek/deepseek-chat"
-#     prompt_template = "if the final answer is an improper fraction, the final step convert improper fraction to mixed fractions: {problem}"
-    
-#     main(input_path, output_path, model_name, prompt_template)
-
-
-
-if __name__ == "__main__":
-
-    filelist = [ '2024_12A','2024_12B']
-    #filelist = ['2022_12A','2022_12B','2023_12A','2023_12B', '2024_12A', '2024_12B']
-
-    ##change here for different output file name
-    model_='phi-4'
-    model_round='benchmark'  ## different prompt; keep all prompts as record for future use
-    
-    #######################
-
-    for file_prefix in filelist:
-        input_path = f'./Results/AMC_{file_prefix}_AP_Input.json'
-        output_path = f'./Results/AMC_{file_prefix}_{model_}_{model_round}_Results.json'
-        #model_name = "meta-llama/llama-4-maverick"
-        model_name = "microsoft/phi-4"
-        prompt_template = "1. if the final answer is an improper fraction,  \
-                                the final step convert improper fraction to mixed fractions.\
-                                        end with: The final answer is : {problem}"
-        prompt_template = "ending with The final answer is: {problem}"                                    
-        
-        main(input_path, output_path, model_name, prompt_template)
+# Example usage:
+react_loop("What is the derivative of x^3?")

@@ -1,0 +1,161 @@
+import os
+import re
+import wolframalpha
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+from huggingface_hub import login
+
+# Authenticate with Hugging Face using environment variable if available
+# Do not hardcode tokens in source code
+hf_token = os.getenv("HUGGINGFACE_TOKEN") or os.getenv("HF_TOKEN")
+if hf_token:
+    try:
+        login(token=hf_token)
+    except Exception as e:
+        print(f"Warning: Hugging Face login failed: {e}")
+class ReActAgent:
+    def __init__(self, wolfram_app_id, model_name="google/gemma-3-27b-it"):
+        # Initialize Wolfram Alpha client
+        self.wolfram_client = wolframalpha.Client(wolfram_app_id)
+        
+        # Load Gemma-3 model and tokenizer
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16)
+        
+        # Configure device (use GPU if available)
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.model.to(self.device)
+        
+        # Agent configuration
+        self.max_steps = 5
+        self.max_new_tokens = 200
+        self.temperature = 0.7
+        
+        # System prompt for ReAct framework
+        self.system_prompt = (
+            "You are Gemma-3, an AI assistant that uses the ReAct framework to solve problems. "
+            "You can use Wolfram Alpha for calculations and factual queries. "
+            "Follow this format:\n\n"
+            "Question: <question>\n"
+            "Thought: <reasoning>\n"
+            "Action: wolfram[<query>]  (if needed)\n"
+            "Observation: <result>\n"
+            "...\n"
+            "Final Answer: <conclusive answer>\n\n"
+            "Only use Wolfram for complex math, calculations, or factual queries. "
+            "When you have the final answer, present it clearly."
+        )
+    
+    def execute_action(self, action):
+        """Execute Wolfram Alpha query and return result."""
+        query = action.strip()
+        try:
+            res = self.wolfram_client.query(query)
+            # Extract the first plaintext result from Wolfram
+            for pod in res.pods:
+                for sub in pod.subpods:
+                    if sub.plaintext:
+                        return sub.plaintext
+            return "No result found."
+        except Exception as e:
+            return f"Error: {str(e)}"
+    
+    def parse_response(self, response):
+        """Parse Gemma-3's response to extract components."""
+        thought_match = re.search(r'Thought:\s*(.*?)(?=\nAction:|\nFinal Answer:|$)', response, re.DOTALL)
+        action_match = re.search(r'Action:\s*wolfram\[(.*?)\]', response)
+        final_match = re.search(r'Final Answer:\s*(.*)', response)
+        
+        thought = thought_match.group(1).strip() if thought_match else ""
+        action = action_match.group(1).strip() if action_match else None
+        final_answer = final_match.group(1).strip() if final_match else None
+        
+        return thought, action, final_answer
+    
+    def generate_response(self, prompt):
+        """Generate response from Gemma-3 model."""
+        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True).to(self.device)
+        
+        with torch.no_grad():
+            outputs = self.model.generate(
+                **inputs,
+                max_new_tokens=self.max_new_tokens,
+                do_sample=True,
+                temperature=self.temperature,
+                pad_token_id=self.tokenizer.eos_token_id
+            )
+        
+        response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+        # Remove the input prompt from the response
+        return response[len(prompt):].strip()
+    
+    def run(self, question):
+        """Main ReAct loop to solve the question."""
+        history = [f"Question: {question}"]
+        prompt = self.system_prompt + "\n\n" + "\n".join(history)
+        
+        print(f"\nQuestion: {question}")
+        
+        for step in range(self.max_steps):
+            # Generate next step
+            prompt += "\nThought:"
+            thought_action = self.generate_response(prompt)
+            
+            # Parse the response
+            thought, action, final_answer = self.parse_response(thought_action)
+            
+            # Update history and prompt
+            history.append(f"Thought: {thought}")
+            prompt += f" {thought}"
+            
+            # Check for final answer
+            if final_answer:
+                history.append(f"Final Answer: {final_answer}")
+                print(f"\nFinal Answer: {final_answer}")
+                return "\n".join(history)
+            
+            # Execute action if present
+            if action:
+                # Execute Wolfram Alpha query
+                observation = self.execute_action(action)
+                history.append(f"Action: wolfram[{action}]")
+                history.append(f"Observation: {observation}")
+                
+                # Update prompt with action and observation
+                prompt += f"\nAction: wolfram[{action}]"
+                prompt += f"\nObservation: {observation}"
+                
+                print(f"Step {step+1}:")
+                print(f"Thought: {thought}")
+                print(f"Action: wolfram[{action}]")
+                print(f"Observation: {observation}")
+            else:
+                # No valid action detected
+                history.append("Action: No valid action specified")
+                prompt += "\nAction: No valid action specified"
+                print(f"Step {step+1}: No valid action specified")
+                break
+        
+        # Return history if max steps reached without final answer
+        return "\n".join(history)
+
+if __name__ == "__main__":
+    # Load Wolfram App ID from environment variable
+    app_id = os.getenv("WOLFRAM_APP_ID")
+    if not app_id:
+        raise ValueError("Missing WOLFRAM_APP_ID environment variable")
+    
+    # Initialize and run the agent
+    agent = ReActAgent(app_id)
+    
+    # Example questions
+    questions = [
+        "What is the square root of 256?",
+        "Calculate the derivative of x^2 + 3x + 5",
+        "What is the population of France?",
+        "How far is the Moon from Earth?"
+    ]
+    
+    for question in questions:
+        result = agent.run(question)
+        print("\n" + "="*50 + "\n")
